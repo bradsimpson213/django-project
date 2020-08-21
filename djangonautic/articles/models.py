@@ -8,6 +8,8 @@ class Article(models.Model):
     #add in thumbnail
     #add in author
 
+    def __str__(self):
+        return self.title
 
 # python manage.py makemigrations
 # python manage.py migrate
