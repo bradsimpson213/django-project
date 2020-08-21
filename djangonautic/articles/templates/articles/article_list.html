@@ -1,22 +1,25 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articles</title>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
+
 <body>
-    <h1>Article List</h1>
-    <div class="articles"> 
+    <h1>Articles List</h1>
+    <div class="articles">
         {% for article in articles %}
-            <div class="article">
-                <h2><a ref="#">{{ article.title }}</a></h2>
-                <p>{{ article.snippet }}</p>
-                <p>{{ article.date }}</p>
-            </div>
+        <div class="article">
+            <h2><a href="#">{{ article.title }}</a></h2>
+            <p>{{ article.snippet }}</p>
+            <p>{{ article.date }}</p>
+        </div>
         {% endfor %}
-
     </div>
-
 </body>
+
 </html>
