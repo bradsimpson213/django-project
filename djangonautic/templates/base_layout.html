@@ -10,6 +10,7 @@
     </head>
     <body>
         <div class="wrapper">
+            <hi><a href="{% url 'articles:list' %}"><img src="{% static 'logo.png' %}" /></a></hi>
             {% block content %}
             {% endblock %}
         </div>
