@@ -10,7 +10,17 @@
     </head>
     <body>
         <div class="wrapper">
-            <hi><a href="{% url 'articles:list' %}"><img src="{% static 'logo.png' %}" /></a></hi>
+            <h1><a href="{% url 'articles:list' %}"><img src="{% static 'logo.png' %}" /></a></h1>
+            <nav>
+                <ul>
+                    <li>
+                        <form class="logout-link" action="{% url 'accounts:logout' %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
             {% block content %}
             {% endblock %}
         </div>
