@@ -1,0 +1,13 @@
+const titleInput = document.querySelector("input[name=title]");
+const slugInput = document.querySelector("input[name=slug]");
+
+const slugify = (val) => {
+    return val.toString().toLowerCase().trim()
+    .replace(/&/g,'-anda-')  //replace & with "-and-"
+    .replace(/[\s\W-]+/g, '-')  //replace spaces, non word chars with dashes and single dash
+}
+
+
+titleInput.addEventListener("keyup", (event) => {
+    slugInput.setAttribute('value', slugify(titleInput.value));
+});
